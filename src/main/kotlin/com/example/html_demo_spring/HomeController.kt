@@ -9,11 +9,23 @@ class HomeController {
 
     @GetMapping("/")
     fun index(): String {
-        return "index"
+        return "sdgb/index"
+    }
+    @PostMapping("/views/overview")
+    fun overview(): String {
+        return "sdgb/views/overview"
     }
 
-    @PostMapping("/furtherInfo")
-    fun furtherInfo(): String {
-        return "furtherInfo"
+    @PostMapping("/views/subscribe")
+    fun subscribe(): String {
+        return "sdgb/views/subscribe"
+    }
+    @PostMapping("/views/rank")
+    fun rank(): String {
+        return "sdgb/views/rank"
+    }
+    @PostMapping("/views/score")
+    fun score(): String {
+        return "sdgb/views/score"
     }
 }
