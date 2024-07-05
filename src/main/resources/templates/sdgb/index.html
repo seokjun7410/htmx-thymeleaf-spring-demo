@@ -2,12 +2,93 @@
 <html lang="english">
 <head>
   <title>exported project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
-  <meta property="twitter:card" content="summary_large_image" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8"/>
+  <meta property="twitter:card" content="summary_large_image"/>
   <script th:src="@{/webjars/htmx.org/1.9.12/dist/htmx.min.js}" defer></script>
+  <!--  차트 cdn-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
+  <script
+      src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <!--  테일윈드 cdn-->
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+  />
+
+  <title>Galileo Design</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!--  차트 cdn-->
   <style data-tag="reset-style-sheet">
-    html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    html {
+      line-height: 1.15;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+    }
+
+    p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background-color: transparent;
+    }
+
+    button, input, optgroup, select, textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    button, select {
+      text-transform: none;
+    }
+
+    button, [type="button"], [type="reset"], [type="submit"] {
+      -webkit-appearance: button;
+    }
+
+    button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    button:-moz-focus, [type="button"]:-moz-focus, [type="reset"]:-moz-focus, [type="submit"]:-moz-focus {
+      outline: 1px dotted ButtonText;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    input {
+      padding: 2px 4px;
+    }
+
+    img {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
   </style>
   <style data-tag="default-style-sheet">
     html {
@@ -17,7 +98,7 @@
 
     body {
       font-weight: 400;
-      font-style:normal;
+      font-style: normal;
       text-decoration: none;
       text-transform: none;
       letter-spacing: normal;
@@ -158,9 +239,9 @@
   />
 </head>
 <body>
-<link rel="stylesheet" href="./style.css" />
+<link rel="stylesheet" href="./style.css"/>
 <div>
-  <link href="./index.css" rel="stylesheet" />
+  <link href="./index.css" rel="stylesheet"/>
 
   <div class="galileodesign-container">
     <div class="galileodesign-galileodesign">
@@ -201,7 +282,8 @@
                               th:hx-post="@{/views/overview}"
                               hx-trigger="click"
                               hx-target=".js-greeting"
-                              hx-swap="outerHTML">Overview</button>
+                              hx-swap="innerHTML">Overview
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -212,7 +294,8 @@
                               th:hx-post="@{/views/subscribe}"
                               hx-trigger="click"
                               hx-target=".js-greeting"
-                              hx-swap="outerHTML">Subscribe</button>
+                              hx-swap="outerHTML">Subscribe
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -223,7 +306,8 @@
                               th:hx-post="@{/views/rank}"
                               hx-trigger="click"
                               hx-target=".js-greeting"
-                              hx-swap="outerHTML">Rank</button>
+                              hx-swap="outerHTML">Rank
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -235,7 +319,8 @@
                               type="button"
                               hx-trigger="click"
                               hx-target=".js-greeting"
-                              hx-swap="outerHTML">Score</button>
+                              hx-swap="outerHTML">Score
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -243,26 +328,181 @@
             </div>
           </div>
           <div class="galileodesign-depth4-frame3">
-            <div class="galileodesign-depth5-frame03">
-              <div class="galileodesign-depth6-frame02">
-                <div class="galileodesign-depth7-frame02">
-                  <div class="galileodesign-depth8-frame04">
-                        <span class="galileodesign-text03">
-                          <span>가장 많이 다시 본 장면</span>
-                        </span>
-                  </div>
-                </div>
+            <div class="myContainer">
+              <div class="left">
+                <!-- Content for the left section -->
+                <canvas id="myChart"></canvas>
               </div>
-              <div class="galileodesign-chart-container">
-                  <p class="galileodesign-text03 js-greeting">This is Index page</p>
-                </div>
+              <div class="right">
+                <!-- Content for the right section -->
+
+                  <div th:each="video : ${videos}" class="flex items-center gap-4 bg-white px-4 py-3 justify-between hover:bg-gray-200">
+                    <div class="flex items-center gap-4">
+                      <div
+                          class="bg-center bg-no-repeat aspect-video bg-cover rounded-lg h-12 w-fit"
+                          th:style="'background-image: url(' + ${video.thumbnailUrl} + ');'"
+                      ></div>
+                      <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate" th:text="${video.title}">Tasty healthy meals for the week</p>
+                    </div>
+                    <div class="shrink-0">
+                      <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="DotsThree" data-size="24px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                          <path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
               </div>
             </div>
+
+            <!--            <div class="galileodesign-depth5-frame03">-->
+            <!--              <div class="galileodesign-depth6-frame02">-->
+            <!--                <div class="galileodesign-depth7-frame02">-->
+            <!--                  <div class="galileodesign-depth8-frame04">-->
+            <!--                        <span class="galileodesign-text03">-->
+            <!--                          <span>가장 많이 다시 본 장면</span>-->
+            <!--                        </span>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--              <div class="galileodesign-chart-container">-->
+            <!--                  <canvas id="myChart"></canvas>-->
+            <!--              </div>-->
+            <!--            </div>-->
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
 </body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ["0:00",
+        "0:46",
+        "1:33",
+        "2:20",
+        "3:07",
+        "3:53",
+        "4:40",
+        "5:27",
+        "6:14",
+        "7:00",
+        "7:47",
+        "8:34",
+        "9:21",
+        "10:08",
+        "10:54",
+        "11:41",
+        "12:28",
+        "13:15",
+        "14:01",
+        "14:48",
+        "15:35",
+        "16:22",
+        "17:08",
+        "17:55",
+        "18:42",
+        "19:29",
+        "20:15",
+        "21:02",
+        "21:49",
+        "22:36",
+        "23:22",
+        "24:09",
+        "24:56",
+        "25:43",
+        "26:29",
+        "27:16",
+        "28:03",
+        "28:50",
+        "29:36",
+        "30:23",
+        "31:10",
+        "31:57",
+        "32:43",
+        "33:30",
+        "34:17",
+        "35:04",
+        "35:50",
+        "36:37",
+        "37:24",
+        "38:11",
+        "38:57",
+        "39:44",
+        "40:31",
+        "41:18",
+        "42:04",
+        "42:51",
+        "43:38",
+        "44:25",
+        "45:11",
+        "45:58",
+        "46:45",
+        "47:32",
+        "48:18",
+        "49:05",
+        "49:52",
+        "50:39",
+        "51:25",
+        "52:12",
+        "52:59",
+        "53:46",
+        "54:32",
+        "55:19",
+        "56:06",
+        "56:53",
+        "57:39",
+        "58:26",
+        "59:13",
+        "59:59",
+        "60:46",
+        "61:33",
+        "62:20",
+        "63:06",
+        "63:53",
+        "64:40",
+        "65:27",
+        "66:13",
+        "67:00"],
+      datasets: [{
+        label: '가장 많이 다시 본 장면',
+        data: [
+          0.211727974, 0, 0.014558803, 0.053960745, 0.054327551, 0.08649844, 0.1232702,
+          0.432613967, 0.917227155, 1, 0.462851564, 0.296848437, 0.22796938, 0.209133166,
+          0.19867782, 0.145272131, 0.15135679, 0.173801796, 0.14640835, 0.183409437, 0.251724014,
+          0.413147944, 0.389369433, 0.340720577, 0.336607968, 0.274724557, 0.292960878, 0.331760555,
+          0.263020947, 0.233658509, 0.235385443, 0.328449376, 0.39121676, 0.291772811, 0.333998824,
+          0.275879259, 0.223960028, 0.213733363, 0.244004091, 0.257771212, 0.229319839, 0.30020825,
+          0.282593468, 0.349451685, 0.263957132, 0.234357744, 0.224578146, 0.249641863, 0.223773424,
+          0.225704513, 0.312316308, 0.382896918, 0.268949073, 0.299199632, 0.279255483, 0.262177286,
+          0.295871343, 0.254249189, 0.189279649, 0.2091923, 0.202745398, 0.196682127, 0.200065921,
+          0.204929536, 0.248959686, 0.24743893, 0.218207748, 0.177389538, 0.195876135, 0.136157081,
+          0.182644795, 0.29354029, 0.411512523, 0.300945931, 0.500134295, 0.308171916, 0.398794592,
+          0.392356608, 0.390459662, 0.284810453, 0.257519226, 0.203055507, 0.145076479, 0.172345411,
+          0.203847344, 0.177951711, 0.142522658, 0.12777362, 0.136646328, 0.155248185, 0.141818756,
+          0.148439585, 0.155783215, 0.124148859, 0.127169087, 0.12752052, 0.084668119, 0.111570997,
+          0.11079767, 0.277106136
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
