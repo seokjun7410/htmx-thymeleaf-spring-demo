@@ -1,4 +1,4 @@
-.galileodesign-container {
+.main-container {
   width: 100%;
   display: flex;
   overflow: auto;
@@ -30,7 +30,7 @@
   background-color: rgba(255, 255, 255, 1);
 }
 
-.galileodesign-depth2-frame0 {
+.header-frame1 {
   display: flex;
   align-self: stretch;
   align-items: center;
@@ -45,31 +45,31 @@
   justify-content: space-between;
 }
 
-.galileodesign-depth3-frame0 {
+.header-frame2 {
   gap: 16px;
   display: flex;
   align-items: center;
 }
 
-.galileodesign-depth4-frame0 {
+.header-logo-frame {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 
-.galileodesign-depth5-frame0 {
+.header-logo {
   width: 16px;
   height: 16px;
   flex-grow: 1;
 }
 
-.galileodesign-depth4-frame1 {
+.header-text-frame {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 
-.galileodesign-text {
+.header-text {
   color: rgba(12, 20, 28, 1);
   height: auto;
   font-size: 18px;
@@ -83,7 +83,7 @@
   text-decoration: none;
 }
 
-.galileodesign-depth3-frame01 {
+.content-frame {
   height: auto;
   display: flex;
   padding: 20px 0;
@@ -93,7 +93,7 @@
   flex-direction: column;
 }
 
-.galileodesign-depth4-frame01 {
+.first-content-frame1 {
   gap: 10px;
   height: 59px;
   display: flex;
@@ -105,7 +105,7 @@
   justify-content: center;
 }
 
-.galileodesign-depth5-frame01 {
+.first-content-frame2 {
   gap: 12px;
   height: 40px;
   display: flex;
@@ -115,7 +115,7 @@
   flex-direction: column;
 }
 
-.galileodesign-depth6-frame0 {
+.first-content-frame3 {
   width: 288px;
   height: 40px;
   display: flex;
@@ -124,14 +124,14 @@
   flex-direction: column;
 }
 
-.galileodesign-depth7-frame0 {
+.first-content-frame4 {
   display: flex;
   align-self: stretch;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 }
 
-.galileodesign-text02 {
+.first-content-text {
   color: rgba(20, 20, 20, 1);
   height: auto;
   font-size: 32px;
@@ -144,7 +144,7 @@
   text-decoration: none;
 }
 
-.galileodesign-depth4-frame3 {
+.chart-content-frame1 {
   width: 1500px;
   gap: 10px;
   display: flex;
@@ -152,7 +152,7 @@
   flex-direction: column;
 }
 
-.galileodesign-depth4-frame33 {
+.bottom-content-frame1 {
   width: 1500px;
   gap: 10px;
   display: flex;
@@ -160,7 +160,7 @@
   flex-direction: column;
 }
 
-.myContentContainer {
+.chart-container, .bottom-container{
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -168,14 +168,14 @@
   gap: 10px; /* Optional: Adjust the gap between the rows */
 }
 
-.left {
+.bottom-container-left {
   flex: 5;
   height: auto;
-  border: 4px solid #d2d2d2; /* 2px 두께의 검은색 실선 테두리 */
-  border-radius: 5px; /* 5px 반지름의 둥근 테두리 */
+  /*border: 4px solid #d2d2d2; !* 2px 두께의 검은색 실선 테두리 *!*/
+  /*border-radius: 5px; !* 5px 반지름의 둥근 테두리 *!*/
 }
 
-.right {
+.bottom-container-right {
   max-height: 500px; /* Set desired max height */
   overflow-y: auto; /* Add vertical scroll */
   display: flex;
@@ -185,7 +185,7 @@
   border-radius: 5px; /* 5px 반지름의 둥근 테두리 */
 }
 
-.video-item {
+.highlight-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -198,11 +198,11 @@
   border-radius: 5px; /* 5px 반지름의 둥근 테두리 */
 }
 
-.video-item:hover {
+.highlight-item:hover {
   background-color: #f0f0f0;
 }
 
-.video-content {
+.highlight-content {
   position: relative; /* Add this to position the index number */
   display: flex;
   align-items: center;
@@ -247,7 +247,7 @@
   text-overflow: ellipsis;
 }
 
-.video-options {
+.hightlight-index {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -272,7 +272,7 @@
 }
 
 @media(max-width: 1600px) {
-  .galileodesign-depth3-frame01 {
+  .content-frame {
     width: 100%;
   }
 }

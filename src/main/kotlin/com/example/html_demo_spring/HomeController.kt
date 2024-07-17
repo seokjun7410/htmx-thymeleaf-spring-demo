@@ -11,11 +11,13 @@ class HomeController {
     @GetMapping("/")
     fun index(model: Model): String {
 
-        val hightlights = arrayListOf<Higtlight>()
+        val highlights = arrayListOf<Highlight>()
         for (i in 0..10){
-            hightlights.add(Higtlight("voice"+i+"","chat"+i,i*100))
+            highlights.add(Highlight("voice summary #"+i+"","chat summary #"+i,100*i))
         }
-        model.addAttribute("hightlights", hightlights)
+        val videoId = "xS2DmtDPB14" // 여기에 원하는 YouTube 비디오 ID를 넣습니다.
+        model.addAttribute("videoId", videoId)
+        model.addAttribute("highlights", highlights)
         return "sdgb/index"
     }
 
@@ -59,7 +61,7 @@ class HomeController {
     }
 }
 
-data class Higtlight(val voice: String, val chat: String, val time:Int)
+data class Highlight(val voice: String, val chat: String, val time:Int)
 
 
 data class Video(val title: String, val thumbnailUrl: String)
