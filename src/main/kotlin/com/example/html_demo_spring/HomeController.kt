@@ -10,20 +10,12 @@ class HomeController {
 
     @GetMapping("/")
     fun index(model: Model): String {
-        val video1 = Video(
-            "title1",
-            "https://miro.medium.com/v2/resize:fit:1036/format:webp/0*qrHSfE71UUbFrmH6"
-        )
-        val video2 = Video(
-            "title2",
-            "https://miro.medium.com/v2/resize:fit:1036/format:webp/0*qrHSfE71UUbFrmH6"
-        )
-        val video3 = Video(
-            "title3",
-            "https://miro.medium.com/v2/resize:fit:1036/format:webp/0*qrHSfE71UUbFrmH6"
-        )
-        val videos = listOf(video1, video2, video3)
-        model.addAttribute("videos", videos)
+
+        val hightlights = arrayListOf<Higtlight>()
+        for (i in 0..10){
+            hightlights.add(Higtlight("voice"+i+"","chat"+i,i*100))
+        }
+        model.addAttribute("hightlights", hightlights)
         return "sdgb/index"
     }
 
@@ -66,5 +58,8 @@ class HomeController {
         return "sdgb/views/demo"
     }
 }
+
+data class Higtlight(val voice: String, val chat: String, val time:Int)
+
 
 data class Video(val title: String, val thumbnailUrl: String)
